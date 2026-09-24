@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="css.png" type="image/x-icon">
+    <title>Midias em html5</title>
+    <h1>Imagem dinamica</h1>
+    <p>Tente abrir esse site em varios disositivos ou simplismente aumente e diminua o tamanho do seu navegador</p>
+</head>
+<body>
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto_P.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto_M.png" type="image/png">
+        <img src="imagens/foto_G.png" alt="Imagem flexível">
+    </picture>
+    <h1>Reproduzir Áudio</h1>
+    <p>Vamos aprender a reproduzir áudio em HTML5.</p>
+    <audio preload="metadata" autoplay controls loop>
+        <source src="midia/Dripped_Out _Blue Deer Studio.mp3" type="audio/mpeg">
+        <source src="midia/guanacast-33.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+        
+    
+    </audio>
+</body>
+</html>

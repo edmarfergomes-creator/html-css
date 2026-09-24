@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de curiosidades sobre a história do Android e da tecnologia.">
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Curiosidades da tecnologia</title>
+    <style>
+        @font-face {
+            font-family: 'idroid';
+            src: url('fontes/idroid.otf') format('opentype');
+        }
+
+        :root {
+            --verde-escuro: #1a5c38;
+            --verde-medio: #2fa866;
+            --verde-claro: #84e1ad;
+            --verde-mais-claro: #c5ebd6;
+            --cinza-fundo: #ebe5c5;
+            --texto: #1e1e1e;
+            --sombra: rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cinza-fundo);
+            color: var(--texto);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--verde-escuro);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background: linear-gradient(to bottom, var(--verde-medio), var(--verde-escuro));
+            color: white;
+            text-align: center;
+            padding: 30px 15px 0;
+            box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: bold;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.05rem;
+        }
+
+        nav {
+            background: var(--verde-escuro);
+            padding: 0 15px 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            font-weight: bold;
+            padding: 10px 12px;
+            text-decoration: none;
+            border-radius: 6px 6px 0 0;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        main {
+            width: min(900px, calc(100% - 30px));
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px var(--sombra);
+            border-radius: 0 0 10px 10px;
+        }
+
+        article {
+            padding: 25px 20px 10px;
+        }
+
+        h2, h3 {
+            color: var(--verde-escuro);
+            font-family: 'idroid', Arial, sans-serif;
+            margin: 0 0 12px;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 2vw, 2.2rem);
+        }
+
+        h3 {
+            background: linear-gradient(to right, var(--verde-mais-claro), transparent);
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            text-indent: 30px;
+            text-align: justify;
+            margin: 15px 0;
+        }
+
+        strong {
+            color: var(--verde-escuro);
+        }
+
+        .figure-wide {
+            display: block;
+            width: 100%;
+            max-width: 760px;
+            margin: 25px auto;
+            background: #eef5ef;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .figure-wide img {
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .figure-article {
+            width: min(100%, 400px);
+            margin: 20px auto;
+            display: block;
+        }
+
+        .figure-article img {
+            display: block;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .aside-box {
+            background: var(--verde-mais-claro);
+            border-radius: 10px;
+            margin: 25px 0;
+            overflow: hidden;
+            box-shadow: 0 0 8px var(--sombra);
+        }
+
+        .aside-box h4 {
+            background: var(--verde-escuro);
+            color: white;
+            margin: 0;
+            padding: 10px 15px;
+            font-size: 1.05rem;
+        }
+
+        .aside-content {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            gap: 0 20px;
+            padding: 15px 20px 10px;
+            list-style: none;
+        }
+
+        .aside-content li {
+            margin: 5px 0;
+            color: var(--texto);
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .aside-content li::before {
+            content: "✓";
+            color: var(--verde-escuro);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .video-wrap {
+            background: var(--verde-escuro);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .video-wrap iframe {
+            width: min(90vw, 760px);
+            height: min(55vw, 430px);
+            max-height: 430px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: var(--verde-escuro);
+            text-align: center;
+            color: white;
+            padding: 14px 15px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        @media (max-width: 620px) {
+            nav ul {
+                justify-content: flex-start;
+            }
+
+            .aside-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Curiosidades de tecnologia</h1>
+        <p>Tudo aquilo que você sempre quis saber sobre o mundo Tech, em um único lugar.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Notícias</a></li>
+            <li><a href="#">Curiosidades</a></li>
+            <li><a href="#">Fale conosco</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h2>História do Mascote do Android</h2>
+
+            <p>Provavelmente você sabe que o sistema operacional <strong>Android</strong>, mantido pelo <strong>Google</strong>, é um dos mais utilizados para dispositivos móveis em todo o mundo. Mas talvez você não saiba que o seu simpático mascote tem um nome e uma história muito curiosa: o <strong>Bugdroid</strong>.</p>
+
+            <p>A primeira versão do Bugdroid apareceu no ano de 2007, logo quando o sistema operacional Android era recém-lançado. A ideia era representar o sistema de forma amigável e acessível, com um robô de aparência simples, mas cheia de personalidade.</p>
+
+            <div class="figure-wide">
+                <img src="imagens/dan-droids.png" alt="Imagem dos droids em diversas cores">
+            </div>
+
+            <p>Essa imagem mostra a evolução dos robôs criados para representar o Android, em diferentes versões e cores. O estilo foi pensado para transmitir leveza, inovação e uma linguagem visual que se tornaria reconhecida em todo o mundo.</p>
+
+            <h3>O surgimento do Bugdroid</h3>
+
+            <p>O nome Bugdroid foi inspirando-se em um design simples de mascote, com corpo cilíndrico, braços e olhos grandes, representando um robô que parecia ter saído diretamente do mundo digital. A criatividade por trás desse mascote ajudou a popularizar a marca Android em campanhas, interfaces e materiais oficiais.</p>
+
+            <div class="figure-article">
+                <img src="imagens/bugdroid.png" alt="Mascote Android bugdroid" style="max-width: 200px; margin: 0 auto;">
+            </div>
+
+            <p>Além da parte visual, o Bugdroid refletiu a ideia de tecnologia acessível para todos. O robô foi desenhado para passar uma sensação de modernidade sem perder a simplicidade, algo que muito contribuiu para a imagem do Android ao longo dos anos.</p>
+
+            <div class="figure-wide">
+                <img src="imagens/irina-blok.jpg" alt="Ilustração da engenheira Irina Blok e o Android">
+            </div>
+
+            <p>O resultado foi um símbolo que rapidamente virou referência visual da plataforma. O Android passou a transmitir uma identidade forte, com o mascote aparecendo em materiais promocionais, documentação e até em versões mais criativas da própria empresa.</p>
+
+            <div class="aside-box">
+                <h4>Quer aprender mais?</h4>
+                <ul class="aside-content">
+                    <li>História do Android</li>
+                    <li>Design de interfaces</li>
+                    <li>Aplicativos móveis</li>
+                    <li>Segurança digital</li>
+                    <li>Atualizações do sistema</li>
+                    <li>Aplicativos essenciais</li>
+                </ul>
+            </div>
+
+            <p>Com o tempo, o sistema Android cresceu e se consolidou como uma das plataformas mais importantes do mundo, ajudando milhões de pessoas a aproveitar a tecnologia em seu dia a dia. O mascote deixou de ser apenas um símbolo e virou um ícone da cultura digital contemporânea.</p>
+        </article>
+
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/l2UDgpLz20M?si=w9w8i1N6QKc1h8Jp" title="Vídeo sobre Android" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <footer>
+        Site criado por <a href="#">Curso em Vídeo</a> para fins educacionais.
+    </footer>
+</body>
+</html>
